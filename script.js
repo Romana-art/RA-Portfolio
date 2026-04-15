@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 btn.textContent = 'Message Sent!';
-                btn.style.background = '#00ff88';
-                btn.style.color = '#050505';
+                btn.style.background = '#38bdf8';
+                btn.style.color = '#020617';
                 contactForm.reset();
 
                 setTimeout(() => {
