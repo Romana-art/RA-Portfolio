@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Romana A. | Automation Expert</title>
+    <title>Romana A. | Automation Expert & AI Specialist</title>
     <link rel="stylesheet" href="style.css">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -36,18 +36,14 @@
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-content centered">
-            <div class="hero-label">Portfolio MMXXIV</div>
+            <div class="hero-label">Available for New Projects</div>
             <h1>Romana A<span>.</span></h1>
-            <div class="automation-badge">Automation Architect</div>
-            <p>I build intelligent workflows and custom web applications that transform how businesses operate.</p>
+            <p class="hero-tagline">Automation Expert | AI Content Creator | Google Apps Script Developer</p>
+            <p class="hero-description">Transforming business operations through intelligent automation and refined digital solutions.</p>
             <div class="hero-actions">
-                <a href="#projects" class="btn-primary">View Projects</a>
-                <a href="#about" class="btn-secondary">Learn More</a>
+                <a href="#projects" class="btn-primary">View Work</a>
+                <a href="#contact" class="btn-secondary">Contact Me</a>
             </div>
-        </div>
-        <div class="hero-visual">
-            <div class="grid-pattern"></div>
-            <div class="glow-sphere"></div>
         </div>
     </section>
 
@@ -84,33 +80,14 @@
                 <span class="section-number">02</span>
                 <h2>Selected Projects</h2>
             </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://picsum.photos/seed/automation1/800/600" alt="Project 1" referrerPolicy="no-referrer">
-                    </div>
-                    <div class="project-info">
-                        <h3>Enterprise CRM Sync</h3>
-                        <p>Automated real-time data synchronization between Google Sheets and Salesforce using Apps Script.</p>
-                        <div class="project-tags">
-                            <span>Google Apps Script</span>
-                            <span>Salesforce API</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://picsum.photos/seed/dashboard1/800/600" alt="Project 2" referrerPolicy="no-referrer">
-                    </div>
-                    <div class="project-info">
-                        <h3>Financial Dashboard</h3>
-                        <p>Custom web app for real-time financial tracking and automated reporting for a logistics firm.</p>
-                        <div class="project-tags">
-                            <span>Web Apps</span>
-                            <span>Data Visualization</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="automation">Automation</button>
+                <button class="filter-btn" data-filter="web-apps">Web Apps</button>
+                <button class="filter-btn" data-filter="dashboards">Dashboards</button>
+            </div>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Dynamically populated by JS -->
             </div>
         </div>
     </section>
@@ -170,6 +147,49 @@
                         <span class="pill">Custom Dashboards</span>
                         <span class="pill">Add-on Development</span>
                         <span class="pill">Data Integration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voiceover & AI Audio Section -->
+    <section id="audio-showcase">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2>Voiceover Portfolio</h2>
+            </div>
+            <div class="audio-container">
+                <div class="audio-card">
+                    <div class="audio-visual">
+                        <div class="wave-lines">
+                            <span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="audio-info">
+                        <div class="audio-label">Premium AI Production</div>
+                        <h3>Professional AI Voiceover Suite</h3>
+                        <p>Experience high-quality, emotionally resonant speech synthesis. Perfect for YouTube, storytelling, and professional narrations.</p>
+                        
+                        <div class="audio-player">
+                            <button id="play-sample" class="player-btn">
+                                <i data-lucide="play" id="play-icon"></i>
+                                <span id="player-text">Play Sample</span>
+                            </button>
+                            <div class="playback-status">
+                                <div class="progress-bar">
+                                    <div id="audio-progress" class="progress-fill"></div>
+                                </div>
+                                <span id="audio-time">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-audio">
+                            <p>Ready to give your brand a voice? Let's collaborate.</p>
+                            <a href="#contact" class="btn-primary">Book Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -243,6 +263,29 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container">
+            <button class="modal-close"><i data-lucide="x"></i></button>
+            <div class="modal-content">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="" referrerPolicy="no-referrer">
+                </div>
+                <div class="modal-body">
+                    <h2 id="modal-title">Project Title</h2>
+                    <div id="modal-tags" class="project-tags"></div>
+                    <div class="modal-desc">
+                        <p id="modal-description">Detailed description goes here...</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" id="modal-link" class="btn-primary" target="_blank">View Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
 </body>
 </html>
